@@ -1,0 +1,6 @@
+c:\users\sherlock\documents\visual studio 2013\Projects\dynamicgoogApp\dynamicgoogApp\bin\dynamicgoogApp.dll.config
+c:\users\sherlock\documents\visual studio 2013\Projects\dynamicgoogApp\dynamicgoogApp\bin\dynamicgoogApp.dll
+c:\users\sherlock\documents\visual studio 2013\Projects\dynamicgoogApp\dynamicgoogApp\bin\dynamicgoogApp.pdb
+c:\users\sherlock\documents\visual studio 2013\Projects\dynamicgoogApp\dynamicgoogApp\obj\Debug\dynamicgoogApp.csprojResolveAssemblyReference.cache
+c:\users\sherlock\documents\visual studio 2013\Projects\dynamicgoogApp\dynamicgoogApp\obj\Debug\dynamicgoogApp.dll
+c:\users\sherlock\documents\visual studio 2013\Projects\dynamicgoogApp\dynamicgoogApp\obj\Debug\dynamicgoogApp.pdb

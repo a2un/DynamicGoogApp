@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>quickstart</title>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+    <script src="Scripts/quickstart.js"></script>
+    
+    <script src="Scripts/theresnoneedofthisfile.js"></script>
+</head>
+<body>
+    <!--google auth stuff-->
+    <div id="authorize-div" style="display: block">
+        <span>Authorize access to Google Apps Script Execution API</span>
+        <!--Button for the user to click to initiate auth sequence -->
+        <button id="authorize-button" onclick="handleAuthClick(event)">
+            Authorize
+        </button>
+    </div>
+    <pre id="output"></pre>
+    <div id="_outputPage" style="display:none;"  >
+        <iframe src="index.html"></iframe>
+    </div>
+</body>
+</html>

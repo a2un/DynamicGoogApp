@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title>Timepass</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    
+    <script src="Scripts/theresnoneedofthisfile.js"></script>
+    <script src="Scripts/quickstart.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+</head>
+
+<body >
+    <div ng-app="dynaGoog" ng-controller="ngCtrl">
+
+        Name : <input type="text" ng-model="name" ng-keydown="change($event.keyCode)" placeholder="Enter name here">
+        <span  id="meTheFinalText" ng-bind="name.length"></span>
+
+    </div>
+</body>
+
+</html>

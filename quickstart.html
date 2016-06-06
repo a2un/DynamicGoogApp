@@ -2,23 +2,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>quickstart</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
     <script src="Scripts/quickstart.js"></script>
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     
     <script src="Scripts/theresnoneedofthisfile.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <style>
+      #showDiv{
+          display:none;
+      }
+      #showDiv span{                    
+          width:500px; !important 
+      }
+    </style>
 </head>
 <body>
     <!--google auth stuff-->
-    <div id="authorize-div" style="display: block">
-        <span>Authorize access to Google Apps Script Execution API</span>
-        <!--Button for the user to click to initiate auth sequence -->
-        <button id="authorize-button" onclick="handleAuthClick(event)">
-            Authorize
-        </button>
-    </div>
-    <pre id="output"></pre>
-    <div id="_outputPage" style="display:none;"  >
-        <iframe src="index.html"></iframe>
+    <div id="_outputPage" class="container-fluid" ng-app="dynaGoog" ng-controller="ngCtrl">
+            <div id="authorize-div" style="display: block">
+                <span>Authorize access to Google Apps Script Execution API</span>
+                <!--Button for the user to click to initiate auth sequence -->
+                <form class="form-horizontal">
+                    <button id="authorize-button" class="btn btn-default" onclick="handleAuthClick(event)">
+                        Authorize
+                    </button>
+               </form>
+            </div>
+        <div id="showDiv">
+            <label>Name : </label>
+            <input class="form-control" type="text" ng-model="name" style="width:200px;" placeholder="Enter name here">
+            <label>Length of the Text:</label>
+            <span  ng-bind="name.length"></span><br/>
+            <button type="submit" class="btn btn-default" ng-click="change()">Search</button>
+            <br />
+            <br />
+            <span id="meTheFinalText"></span>
+            <table class="table table-hover table-bordered">
+                <tr> <!--ng-repeat="i in ">-->
+                    <th ng-repeat="item in items">
+                        {{item}}
+                    </th>
+                </tr>
+
+                </tr>
+            </table>
+
+        </div>
+        
+        
+            <!--iframe src="https://docs.google.com/spreadsheets/d/1SH4TviRdVGqZg-HhcXwiMw5hpbOs4lG3WXsgUqnaQlw/preview" width="700" height="500" frameborder="0"></iframe>-->
     </div>
 </body>
 </html>

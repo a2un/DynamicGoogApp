@@ -23,18 +23,18 @@ function checkAuth() {
  */
 function handleAuthResult(authResult) {
     var authorizeDiv = document.getElementById('authorize-div');
-    var _outputPage = document.getElementById('_outputPage');
+
     if (authResult && !authResult.error) {
         // Hide auth UI, then load client library.
         authorizeDiv.style.display = 'none';
-        _outputPage.style.display = 'block';
-        _outputPage.style.width = '1000';
-        _outputPage.style.height = window.innerHeight;
+        
+        $('#showDiv').show();
         //callScriptFunction();
     } else {
         // Show auth UI, allowing the user to initiate authorization by
         // clicking authorize button.
         authorizeDiv.style.display = 'inline';
+
     }
 }
 
@@ -54,7 +54,7 @@ function handleAuthClick(event) {
  * Calls an Apps Script function to list the folders in the user's
  * root Drive folder.
  */
-function callScriptFunction() {
+function callScriptFunction(name) {
     /*SpreadsheetReader project in bound to the sheet Test Document in BM Dynamic Folder of drive folder
     https://drive.google.com/drive/folders/0B3NH2reV_QGMYk9wN2NPUnR6Tm8 */
     console.log('entering script function');
@@ -62,7 +62,10 @@ function callScriptFunction() {
 
     // Create an execution request object.
     var request = {
-        'function': 'callByName'
+        'function': 'getByName',
+        "parameters": [
+                name
+        ],
     };
 
     // Make the API request.
@@ -111,7 +114,8 @@ function callScriptFunction() {
                     appendPre('\t' + folderSet[id] + ' (' + id + ')');
                 });
             }*/
-            appendPre(folderLink);
+            
+            return folderLink;
         }
     });
 }
@@ -123,7 +127,8 @@ function callScriptFunction() {
  * @param {string} message Text to be placed in pre element.
  */
 function appendPre(message) {
-    var pre = document.getElementById('meTheFinalText');
+    /*var pre = document.getElementById('meTheFinalText');
     var textContent = document.createTextNode(message + '\n');
-    pre.appendChild(textContent);
+    pre.appendChild(textContent);*/
+    $('#meTheFinalText').html(message);
 }
